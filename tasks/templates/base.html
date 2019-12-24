@@ -3,18 +3,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Nueva Tarea</title>
+    <title>MyApp: {% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
-    <header>Nueva tarea</header>
-    <form action="/newtask" method="post"><br/>
-        <input type="text" name="title" placeholder="Título">
-        <input type="text" name="desc" placeholder="Descripcion">
-        <input type="date" name="date"><br/>
-        <input type="submit" value="Enviar">
-    </form>
-
+    <header>
+        Guia de tareas
+    </header>
+    
+    <section>
+        {% block content %}{% endblock %}
+    </section>
+    
     <footer>
         &copy; 2020 - Todos los derechos reservados
     </footer>
