@@ -9,17 +9,19 @@ header, footer {
     padding: 10px;
 }
 
-.tasks_table, {
-    width: 80%;
-    margin: 12px auto;
+.tasks_table {
+    width: 100%;
+    margin: 10px auto;
+    border: 5px solid black;
+    padding: 20px;
+    border-spacing: 10px
 }
 
 nav {
     margin: 12px 0;
 }
 
-.tasks_table td, .tasks_table th,
-{
+.tasks_table td {
     padding: 10px;
     border-bottom: 1px solid lightgray
 }
@@ -27,3 +29,4 @@ nav {
 .tasks_table th {
     border-color: rgb(0, 0, 0);
 }
+
