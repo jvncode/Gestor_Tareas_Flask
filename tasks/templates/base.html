@@ -3,18 +3,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>MyApp: {% block title %}{% endblock %}</title>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/normalize.css">
+    <link rel="stylesheet" href="/static/css/skeleton.css">
     <link rel="stylesheet" href="/static/css/styles.css">
+
 </head>
 <body>
     <header>
-        Guia de tareas
+        <a href="/" class="logo">Mis tareas</a>
     </header>
-    
-    <section>
+
+    <section class="container">
         {% block content %}{% endblock %}
     </section>
-    
+
     <footer>
         &copy; 2020 - Todos los derechos reservados
     </footer>

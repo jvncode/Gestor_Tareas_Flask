@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
-{% block title %} Indice {% endblock %}
+{% block title %} Mis tareas {% endblock %}
 
 {% block content %}
-    <form action="/">
-        <table class="tasks_table">
+    <h1>Mis tareas</h1>
+        <table class="u-full-width">
             <tr>
                 <th>Título</th>
                 <th>Descripción</th>
@@ -18,7 +18,5 @@
             </tr>
             {% endfor %}
         </table>
-        <br/>
-        <input type="button" value="Añadir Tarea" onClick=" window.location.href='/newtask'">
-    </form>
+        <a class="button button-primary u-pull-right" href="/newtask">Nueva tarea</a>
 {% endblock %}

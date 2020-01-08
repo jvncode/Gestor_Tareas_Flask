@@ -1,32 +1,5 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
+.field-error {
+    color: crimson;
+    font-size: 0.8em;
+    margin-top: -12px;
 }
-
-header, footer {
-    background-color: rgb(53, 220, 67);
-    font-weight: bold;
-    font-size: 1.2em;
-    padding: 10px;
-}
-
-.tasks_table {
-    width: 100%;
-    margin: 10px auto;
-    border: 5px solid black;
-    padding: 20px;
-    border-spacing: 10px
-}
-
-nav {
-    margin: 12px 0;
-}
-
-.tasks_table td {
-    padding: 10px;
-    border-bottom: 1px solid lightgray
-}
-
-.tasks_table th {
-    border-color: rgb(0, 0, 0);
-}
-
