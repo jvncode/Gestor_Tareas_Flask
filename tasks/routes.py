@@ -36,9 +36,16 @@ def dbQuery(consulta, *args):
 def index():
     registros =  dbQuery('SELECT titulo, descripcion, fecha, id FROM tareas;')
 
-    if isinstance(registros, tuple):
-        registros = {registros}
+    if registros:
+
+        if isinstance(registros, dict):
+            registros = [registros]
+    else:
+        registros = []
+
     return render_template("index.html", registros=registros)
+
+
 
 
 @app.route("/newtask", methods=['GET', 'POST'])

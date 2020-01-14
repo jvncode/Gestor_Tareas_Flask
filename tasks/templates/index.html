@@ -10,6 +10,11 @@
                 <th>Descripción</th>
                 <th>Fecha</th>
             </tr>
+            {% if registros.length == 0 %}
+            <tr>
+                <td> colspan="4">No hay tareas</td>
+            </tr>
+            {% endif %}
             {% for data in registros %}
             <tr>
                 <td><input type="radio" name="ix" value="{{data['id']}}" ></td>
