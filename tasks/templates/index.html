@@ -1,5 +1,7 @@
 {% extends "base.html" %}
+
 {% block title %} Mis tareas {% endblock %}
+
 {% block content %}
     <h1>Mis tareas</h1>
     <form action="/processtask">
@@ -10,17 +12,17 @@
                 <th>Descripción</th>
                 <th>Fecha</th>
             </tr>
-            {% if registros.length == 0 %}
+            {% if registros|length == 0 %}
             <tr>
-                <td> colspan="4">No hay tareas</td>
+                <td class="field-error" colspan="4">No hay tareas</td>
             </tr>
             {% endif %}
-            {% for data in registros %}
+            {% for tarea in registros %}
             <tr>
-                <td><input type="radio" name="ix" value="{{data['id']}}" ></td>
-                <td>{{data['titulo']}}</td>
-                <td>{{data['descripcion']}}</td>
-                <td>{{data['fecha']}}</td>
+                <td><input type="radio" name="ix" value="{{tarea['id']}}" ></td>
+                <td>{{tarea['titulo']}}</td>
+                <td>{{tarea['descripcion']}}</td>
+                <td>{{tarea['fecha']}}</td>
             </tr>
             {% endfor %}
         </table>

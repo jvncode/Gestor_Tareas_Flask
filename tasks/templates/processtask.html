@@ -29,7 +29,7 @@
             <div class="six columns">
                 {{ form.fx(class='u-full-width', type="date") }}
                 {% if form.fx.errors %}
-                    {% for error in form.date.errors %}
+                    {% for error in form.fx.errors %}
                         <p class='field-error'>{{ error }}</p>
                     {% endfor %}
                 {% endif %}
