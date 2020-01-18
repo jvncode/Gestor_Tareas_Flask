@@ -42,7 +42,7 @@ class ProccessEmployeeForm(FlaskForm):
     id = HiddenField('id', validators=[DataRequired()])
     btn = HiddenField('btn', validators=[DataRequired(), AnyOf(['M', 'B'])])
     name = StringField('Nombre', validators=[DataRequired()])
-    lastname = StringField('Apellidos', validator=[DataRequired()])
-    email = StringField('Correo electrónico', validator=[DataRequired(), Email()])
+    lastname = StringField('Apellidos', validators=[DataRequired()])
+    email = StringField('Correo electrónico', validators=[DataRequired(), Email()])
 
     submit = SubmitField('Aceptar')

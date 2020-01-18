@@ -33,7 +33,7 @@ def dbQuery(consulta, *args):
 
 @app.route("/")
 def index():
-    registros = dbQuery('SELECT titulo, descripcion, fecha, id FROM tareas;')
+    registros = dbQuery('SELECT  t.id, t.titulo, t.descripcion, t.fecha, e.name, e.apellidos FROM tareas as t  left join empleados as e on t.id_empleado = e.id;')
     
     if registros:
         if isinstance(registros, dict):
@@ -196,16 +196,16 @@ def proccesEmployee():
                                                   'email': registroAct['email'], 
                                                   'btn': accion})
 
-            return render_template("processemployee.html", form=form)                                
+            return render_template("processemployee.html", form=form)
         else:
             return redirect(url_for("employees"))
-    
+
     if form.btn.data == 'B':
         id = int(request.values.get('id'))
         consulta = """
             DELETE FROM empleados
              WHERE id = ?;
-        """
+            """
         dbQuery(consulta, ix)
 
         return redirect(url_for("employees"))
@@ -215,8 +215,8 @@ def proccesEmployee():
             id = int(request.values.get('id'))
             consulta = """
                 UPDATE empleados
-                   SET name = ?, apellidos = ?, email = ?
-                 WHERE id = ?;
+                SET name = ?, apellidos = ?, email = ?
+                WHERE id = ?;
             """
 
             dbQuery(consulta,

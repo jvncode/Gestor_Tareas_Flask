@@ -11,6 +11,7 @@
                 <th>Título</th>
                 <th>Descripción</th>
                 <th>Fecha</th>
+                <th>Empleado</th>
             </tr>
             {% if registros|length == 0 %}
             <tr>
@@ -23,6 +24,7 @@
                 <td>{{tarea['titulo']}}</td>
                 <td>{{tarea['descripcion']}}</td>
                 <td>{{tarea['fecha']}}</td>
+                <td>{{tarea['name']}} {{tarea['apellidos']}}</td>
             </tr>
             {% endfor %}
         </table>
