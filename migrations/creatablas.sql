@@ -5,6 +5,8 @@ CREATE TABLE "tareas" (
 	"titulo"	TEXT NOT NULL,
 	"descripcion"	TEXT,
 	"fecha"	TEXT NOT NULL
+	"id_empleado"	INTEGER,
+	FOREIGN KEY("id_empleado") REFERENCES "empleados"("id")
 );
 
 DROP TABLE IF EXISTS empleados;

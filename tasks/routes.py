@@ -178,14 +178,16 @@ def proccesEmployee():
 
     if request.method == 'GET':
         id = request.values.get('id')
+
         if id:
             registroAct = dbQuery('SELECT name, apellidos, email, id from empleados where id = ?;', id)
-
+            
             if registroAct:
                 accion = ''
 
                 if 'btnModificar' in request.values:
                     accion = 'M'
+                    
 
                 if 'btnBorrar' in request.values:
                     accion = 'B'
