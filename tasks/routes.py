@@ -177,7 +177,7 @@ def proccesEmployee():
     form = ProccessEmployeeForm(request.form)
 
     if request.method == 'GET':
-        id = request.values.get('id')
+        id = request.values.get('ix')
 
         if id:
             registroAct = dbQuery('SELECT name, apellidos, email, id from empleados where id = ?;', id)
@@ -208,7 +208,7 @@ def proccesEmployee():
             DELETE FROM empleados
              WHERE id = ?;
             """
-        dbQuery(consulta, ix)
+        dbQuery(consulta, id)
 
         return redirect(url_for("employees"))
 
