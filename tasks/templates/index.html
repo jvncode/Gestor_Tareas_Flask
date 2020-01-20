@@ -24,7 +24,11 @@
                 <td>{{tarea['titulo']}}</td>
                 <td>{{tarea['descripcion']}}</td>
                 <td>{{tarea['fecha']}}</td>
+                {% if tarea['name'] == None %}
+                    <td>{{ '--' }}</td>
+                {% else %}
                 <td>{{tarea['name']}} {{tarea['apellidos']}}</td>
+                {% endif %}
             </tr>
             {% endfor %}
         </table>
